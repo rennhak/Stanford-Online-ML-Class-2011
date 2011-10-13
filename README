@@ -1,0 +1,27 @@
+Stanford Online Course - Introduction to Machine Learning (ML)
+-------------------------------------------------------------
+
+This repository holds text notes in LaTeX format and code to the excercises of the Stanford Online
+course "Introduction to Machine Learning" which was started for the first time in fall 2011.
+
+The idea behind this repository is not intended to encourage cheating, but rather to help other
+students of this course to get comprehensive notes and code to better understand the problems at
+hand.
+
+Should you encounter any errors, typos or other problems please contact the author(s) directly in
+the Maintainers file or by forking this repository on Github and sending a pull request for patches
+you want to include.
+
+Good Luck and happy studying!
+
+-Bjoern
+
+
+
+License
+-------
+
+(c) 2011, Bjoern Rennhak, Dual Licensed under GPLv2 and BSD
+
+
+# vim:ts=2:tw=80:wm=80:ft=ruby
