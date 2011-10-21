@@ -1,0 +1,19 @@
+
+% Ungraded exercise
+%
+% (dataset 2)
+% Calculate the price for a 1650 sq feet house with 3 bedrooms using the normal eqn.
+
+
+>> theta = normalEqn( X, y)
+theta =
+
+140.861086210877
+16978.191059034896
+
+
+% Predict price based on learned data
+
+>>  [ 1650, 3 ] * theta
+ans =  283355.365425051
+
