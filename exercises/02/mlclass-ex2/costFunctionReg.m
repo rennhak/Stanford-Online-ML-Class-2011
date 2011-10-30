@@ -39,7 +39,11 @@ for j = 1:n
   first         = hypothesis - y;
   second        = X(:,j);
 
-  grad(j)       = (1/m) * sum( first .* second );
+  if( j == 0 )
+    grad(j)       = (1/m) * sum( first .* second );
+  else
+    grad(j)       = (1/m) * ( sum( ( first .* second ) ) + ( lambda .* theta_rest(j) ) ) ;
+  end
 end % of for j
 
 
