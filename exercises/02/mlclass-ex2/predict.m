@@ -16,18 +16,17 @@ p = zeros(m, 1);
 %
 
 
+hypothesis    = sigmoid( X * theta );
+
 for i = 1:m
 
-  result = sigmoid( theta' * X(i) );
-
-  if( result >= 0.5 )
+  if( hypothesis(i) >= 0.5 )
     p(i) = 1;
   else
     p(i) = 0;
   end
 
 end % of for i
-
 
 
 
