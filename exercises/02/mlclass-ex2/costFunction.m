@@ -24,11 +24,16 @@ grad = zeros(size(theta));
 
 cost_sum  = 0;
 
-for i = 1:m
-  hyp_val   = theta' .* X(i,:);
-end
 
-hyp       = sigmoid( hyp_val );
+% Hypothesis
+hyp = sigmoid( theta' .* X(:) )
+
+
+%for i = 1:m
+%  hyp_val   = theta' .* X(i,:);
+%end
+
+%hyp       = sigmoid( hyp_val );
 
 for i = 1:m
   t1        = -y(i) * log( hyp );
@@ -39,7 +44,6 @@ for i = 1:m
 end
 
 J = (1/m) * cost_sum;
-J = J(1);
 
 grad_sum  = 0;
 n         = length( theta );
