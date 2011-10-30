@@ -25,9 +25,6 @@ grad = zeros(size(theta));
 cost_sum  = 0;
 
 for i = 1:m
-  %a = theta'
-  %b = X( i, : )
-  %c = a .* b
   hyp_val   = theta' .* X(i,:);
 end
 
