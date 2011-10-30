@@ -39,6 +39,7 @@ for i = 1:m
 end
 
 J = (1/m) * cost_sum;
+J = J(1);
 
 grad_sum  = 0;
 n         = length( theta );
@@ -53,8 +54,7 @@ for i = 1:m
   end % of for j
 end % of for i
 
-grad = (1/m) * grad_sum;
-
+grad = ( (1/m) * grad_sum )';
 
 % =============================================================
 
