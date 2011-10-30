@@ -22,43 +22,25 @@ grad = zeros(size(theta));
 %
 
 
-cost_sum  = 0;
-
 
 % Hypothesis
-hyp = sigmoid( theta' .* X(:) )
+hypothesis      = sigmoid( X * theta );
 
 
-%for i = 1:m
-%  hyp_val   = theta' .* X(i,:);
-%end
+% Penalties
+first           = -y .* log( hypothesis );
+second          = (1 - y) .* log( 1 - hypothesis );
 
-%hyp       = sigmoid( hyp_val );
+% Cost
+J               = (1/m) * sum( first - second );
 
-for i = 1:m
-  t1        = -y(i) * log( hyp );
-  t2        = (1-y(i)) * log( 1 - hyp );
 
-  t         = t1 - t2;
-  cost_sum  += t;
-end
+for j = 1:n
+  first         = hypothesis - y;
+  second        = X(:,j);
 
-J = (1/m) * cost_sum;
-
-grad_sum  = 0;
-n         = length( theta );
-
-for i = 1:m
-  for j = 1:n
-    t1        = hyp - y(i);
-    t2        = X(i,j);
-
-    t         = t1 .* t2;
-    grad_sum  += t;
-  end % of for j
-end % of for i
-
-grad = ( (1/m) * grad_sum )';
+  grad(j)       = (1/m) * sum( first .* second );
+end % of for j
 
 % =============================================================
 
